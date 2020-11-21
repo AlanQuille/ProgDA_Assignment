@@ -14290,7 +14290,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Purpose-of-numpy.random-package-">Purpose of numpy.random package <a name="purpose" /><a class="anchor-link" href="#Purpose-of-numpy.random-package-">&#182;</a></h2><p>The numpy.random package is used to generate numpy arrays of pseudo-random numbers, i.e., numbers which appear to be randomly generated numbers but are actually generated using non-random (deterministic) means <a href="#1">1</a>, specifically using the Mersenne-Twister algorithm <a href="#2">2</a>. These are innumerable applications for these numbers in science and mathematics. For instance, in machine learning one is often required to split data into train and test sets and the data should be split randomly.</p>
+<h2 id="Purpose-of-numpy.random-package-">Purpose of numpy.random package <a name="purpose" /><a class="anchor-link" href="#Purpose-of-numpy.random-package-">&#182;</a></h2><p>The numpy.random package is used to generate lists of pseudo-random numbers, i.e., numbers which appear to be randomly generated numbers but are actually generated using non-random (deterministic) means <a href="#1">1</a>, specifically using the Mersenne-Twister algorithm <a href="#2">2</a>. These lists are returned as numpy arrays, which are a type of list in numpy that enable numpy functions to be used on them. These are innumerable applications for these numbers in science and mathematics. For instance, in machine learning one is often required to split data into train and test sets and the data should be split randomly.</p>
 
 </div>
 </div>
@@ -14641,8 +14641,8 @@ The size of the list of numbers: 100000
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The <strong>binomial</strong> function returns integers as the binomial distribution is discrete.
-A visual representation of <strong>binomials</strong>'s functionality is shown as follows:</p>
+<p>The <strong>binomial</strong> function returns integers because the binomial distribution is discrete.
+A visual representation of <strong>binomial</strong>'s functionality is shown as follows:</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14778,16 +14778,16 @@ The purpose of <strong>uniform</strong> is to generate a numpy array of floats u
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[76]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="n">rg</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100000</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A list of numbers generated from the uniform distribution: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
 <span class="c1"># mean and median should equal</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">u</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">u</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The mean value is: </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">u</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The median value is: </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">u</span><span class="p">)))</span>
 <span class="c1"># 100000 number of samples</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The size of the list of numbers is: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">)))</span>
 </pre></div>
 
      </div>
@@ -14807,10 +14807,10 @@ The purpose of <strong>uniform</strong> is to generate a numpy array of floats u
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[3.73549309 2.70241931 4.31471345 ... 2.29645185 4.16426158 3.90863099]
-3.5018122774687575
-3.504622233907246
-100000
+<pre>A list of numbers generated from the uniform distribution: [1 0 1 ... 0 0 1]
+The mean value is: 3.5029
+The median value is: 3.5041
+The size of the list of numbers is: 100000
 </pre>
 </div>
 </div>
@@ -14940,7 +14940,7 @@ The purpose of the <strong>normal</strong> function is to generate a numpy array
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The mean value is: </span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The median value is: </span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
 <span class="c1"># number of samples generated</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The size of the list of numbers is: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
 </pre></div>
 
      </div>
@@ -15084,7 +15084,7 @@ The purpose of the <strong>lognormal</strong> function is to generate a numpy ar
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[64]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[77]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ln</span> <span class="o">=</span> <span class="n">rg</span><span class="o">.</span><span class="n">lognormal</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">100000</span><span class="p">)</span>
@@ -15093,7 +15093,7 @@ The purpose of the <strong>lognormal</strong> function is to generate a numpy ar
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The mean value is: </span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">ln</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The median value is: </span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">ln</span><span class="p">)))</span>
 <span class="c1"># number of samples taken</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The size of the list of numbers is: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ln</span><span class="p">)))</span>
 </pre></div>
 
      </div>
@@ -15114,11 +15114,11 @@ The purpose of the <strong>lognormal</strong> function is to generate a numpy ar
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>A list of numbers generated from the lognormal distribution:
- [ 9.95306399 10.29262907  9.94203497 ... 12.01771756 13.51107074
- 11.16635701]
-The mean value is: 12.59
+ [15.74258388 16.61047774 22.21154794 ... 11.46218956 11.68679036
+  9.19443933]
+The mean value is: 12.57
 The median value is: 12.19
-100000
+The size of the list of numbers is: 100000
 </pre>
 </div>
 </div>
@@ -15373,13 +15373,13 @@ A visual representation of <strong>exponential</strong>'s functionality is shown
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Student&#8217;s-t--">Student&#8217;s t  <a name="student" /><a class="anchor-link" href="#Student&#8217;s-t--">&#182;</a></h3><p>The Student's t distribution is a probability distribution which is very similar to the normal distribution. It is used to estimate the mean of normally distributed populations when the sample size is small (it approaches the normal distribution as the sample size increases) and the standard deviation of the population is not known.
 The distribution is often used in the Student' t-test, which estimates the likelihood of the mean of the sample differing from the mean of the population (one sample t-test) or estimates the likelihood of two population means differing, given two samples (two sample t-test).
-The purpose of the <strong>standard_t</strong> function is to generate a Numpy array of floats using this distribution and, hence, to do t-tests. For instance, given a sample of the IQ's of 11 people (10 degrees of freedom), can we reject the null hypothesis that the mean of the sample is different to the mean of the IQ's in general (which is 100)?</p>
+The purpose of the <strong>standard_t</strong> function is to generate a numpy array of floats using this distribution and, hence, to do t-tests. For instance, given a sample of the IQ's of 11 people (10 degrees of freedom), can we reject the null hypothesis that the mean of the sample is different to the mean of the IQ's in general (which is 100)?</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[85]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># example numpy array of IQ&#39;s</span>
@@ -15387,15 +15387,15 @@ The purpose of the <strong>standard_t</strong> function is to generate a Numpy a
 <span class="c1"># st is numpy array of samples taken from standard_t distribution with 10 degrees of freedom</span>
 <span class="n">st</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">standard_t</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span>
 <span class="c1"># mean of IQ_list</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">IQ_list</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The mean of the list of IQ&#39;s is: </span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">IQ_list</span><span class="p">)))</span>
 <span class="c1"># standard deviation of IQ_list with 1 degree of freedom</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">IQ_list</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The standard deviation of the list of IQ&#39;s is: </span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">IQ_list</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)))</span>
 <span class="c1"># difference between mean of IQ-list and population mean of IQ&#39;s (100)</span>
 <span class="c1"># divided by the standard deviation over the square root of the size of IQ_list</span>
 <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">IQ_list</span><span class="p">)</span><span class="o">-</span><span class="mi">100</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">IQ_list</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">IQ_list</span><span class="p">)))</span>
 <span class="c1"># p_value generated from summing up all values of st for which st&lt;t </span>
 <span class="c1"># and dividing result by the size of st</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The p-value is: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">st</span><span class="o">&lt;</span><span class="n">t</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">st</span><span class="p">))))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The p-value is: </span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">st</span><span class="o">&lt;</span><span class="n">t</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">st</span><span class="p">))))</span>
 </pre></div>
 
      </div>
@@ -15415,9 +15415,9 @@ The purpose of the <strong>standard_t</strong> function is to generate a Numpy a
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>115.63636363636364
-23.732984335193613
-The p-value is: 0.97319
+<pre>The mean of the list of IQ&#39;s is: 115.64
+The standard deviation of the list of IQ&#39;s is: 23.73
+The p-value is: 0.97
 </pre>
 </div>
 </div>
@@ -15429,7 +15429,7 @@ The p-value is: 0.97319
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>So, the p-value is 0.974, which is much greater than the critical value of 0.05, so the null hypothesis that they are different cannot be rejected (this process is simplified using the <strong>stats</strong> module from the <strong>scipy</strong> package). A visual representation of <strong>standard_t</strong>'s functionality is shown as follows:</p>
+<p>So, the p-value is 0.97, which is much greater than the critical value of 0.05, so the null hypothesis that they are different cannot be rejected (this process is simplified using the <strong>stats</strong> module from the <strong>scipy</strong> package). A visual representation of <strong>standard_t</strong>'s functionality is shown as follows:</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15476,8 +15476,8 @@ The p-value is: 0.97319
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>As can be seen from the histogram, the distribution resembles a normal distribution.</p>
-<h3 id="Chi-squared-">Chi-squared <a name="chi" /><a class="anchor-link" href="#Chi-squared-">&#182;</a></h3><p>The chi-squared distribution comes from summing the square of multiple normally distributed random variables. This distribution is used for the Pearson's chi-squared test. This test compares two sets of data and calculates whether differences between expected and observed data are statistically significant.
-The purpose of the <strong>chisquare</strong> function is to generate a Numpy array of floats from this distribution. For instance, to generate a Numpy array of 100000 floats with 2 degrees of freedom:</p>
+<h3 id="Chi-squared-">Chi-squared <a name="chi" /><a class="anchor-link" href="#Chi-squared-">&#182;</a></h3><p>The chi-squared distribution comes from summing the squares of multiple normally distributed random variables. This distribution is used for the Pearson's chi-squared test. This test compares two sets of data and calculates whether differences between expected and observed data are statistically significant.
+The purpose of the <strong>chisquare</strong> function is to generate a Numpy array of floats from this distribution. For instance, to generate a numpy array of 100000 floats with 2 degrees of freedom:</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
