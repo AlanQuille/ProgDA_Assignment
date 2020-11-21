@@ -14290,7 +14290,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Purpose-of-numpy.random-package-">Purpose of numpy.random package <a name="purpose" /><a class="anchor-link" href="#Purpose-of-numpy.random-package-">&#182;</a></h2><p>The numpy.random package is used to generate lists of pseudo-random numbers, i.e., numbers which appear to be randomly generated numbers but are actually generated using non-random (deterministic) means <a href="#1">1</a>, specifically using the Mersenne-Twister algorithm <a href="#2">2</a>. These lists are returned as numpy arrays, which are a type of list in numpy that enable numpy functions to be used on them. These are innumerable applications for these numbers in science and mathematics. For instance, in machine learning one is often required to split data into train and test sets and the data should be split randomly.</p>
+<h2 id="Purpose-of-numpy.random-package-">Purpose of numpy.random package <a name="purpose" /><a class="anchor-link" href="#Purpose-of-numpy.random-package-">&#182;</a></h2><p>The numpy.random package is used to generate lists of pseudo-random numbers, i.e., numbers which appear to be randomly generated numbers but are actually generated using non-random (deterministic) means <a href="#1">1</a>, specifically using the Mersenne-Twister algorithm <a href="#2">2</a>. These lists are returned as numpy arrays, which are a type of list in numpy that enable numpy functions to be used on them. There are innumerable applications for these numbers in science and mathematics. For instance, in machine learning one is often required to split data into train and test sets and the data should be split randomly.</p>
 
 </div>
 </div>
@@ -14778,11 +14778,11 @@ The purpose of <strong>uniform</strong> is to generate a numpy array of floats u
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[76]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[87]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="n">rg</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100000</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A list of numbers generated from the uniform distribution: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A list of numbers generated from the uniform distribution:</span><span class="se">\n</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">u</span><span class="p">))</span>
 <span class="c1"># mean and median should equal</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The mean value is: </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">u</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The median value is: </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">u</span><span class="p">)))</span>
@@ -14807,9 +14807,10 @@ The purpose of <strong>uniform</strong> is to generate a numpy array of floats u
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>A list of numbers generated from the uniform distribution: [1 0 1 ... 0 0 1]
-The mean value is: 3.5029
-The median value is: 3.5041
+<pre>A list of numbers generated from the uniform distribution:
+ [4.87765596 3.16867875 4.22482687 ... 4.33976469 4.77668735 4.69152517]
+The mean value is: 3.4999
+The median value is: 3.4971
 The size of the list of numbers is: 100000
 </pre>
 </div>
@@ -14931,11 +14932,11 @@ The purpose of the <strong>normal</strong> function is to generate a numpy array
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[89]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">100000</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A list of numbers generated from the normal distribution:</span><span class="se">\n</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 <span class="c1"># mean and median should equal</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The mean value is: </span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The median value is: </span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
@@ -14960,10 +14961,11 @@ The purpose of the <strong>normal</strong> function is to generate a numpy array
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[2.4526109  2.50060309 2.55633119 ... 2.63146741 2.45448969 2.53997305]
+<pre>A list of numbers generated from the normal distribution:
+ [2.50320155 2.48705274 2.5163663  ... 2.58085891 2.59705872 2.60860794]
 The mean value is: 2.50
 The median value is: 2.50
-100000
+The size of the list of numbers is: 100000
 </pre>
 </div>
 </div>
@@ -15476,7 +15478,7 @@ The p-value is: 0.97
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>As can be seen from the histogram, the distribution resembles a normal distribution.</p>
-<h3 id="Chi-squared-">Chi-squared <a name="chi" /><a class="anchor-link" href="#Chi-squared-">&#182;</a></h3><p>The chi-squared distribution comes from summing the squares of multiple normally distributed random variables. This distribution is used for the Pearson's chi-squared test. This test compares two sets of data and calculates whether differences between expected and observed data are statistically significant.
+<h3 id="Chi-squared-">Chi-squared <a name="chi" /><a class="anchor-link" href="#Chi-squared-">&#182;</a></h3><p>The chi-squared distribution comes from summing the squares of multiple normally distributed random variables. This distribution is used for Pearson's chi-squared test. This test compares two sets of data and calculates whether differences between expected and observed data are statistically significant.
 The purpose of the <strong>chisquare</strong> function is to generate a Numpy array of floats from this distribution. For instance, to generate a numpy array of 100000 floats with 2 degrees of freedom:</p>
 
 </div>
