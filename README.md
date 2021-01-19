@@ -1,4 +1,4 @@
-# Progamming for Data Analysis Assignment 2020
+# Programming for Data Analysis Assignment 2020
 This repo contains the Jupyter notebook with the assignment for Programming for Data Analysis 2020. It also contains a html version of said notebook.
 
 The notebook is called **Programming for Data Analysis Assignment 2020.ipynb**. To access this notebook:
